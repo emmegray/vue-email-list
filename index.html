@@ -10,11 +10,32 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+  <link rel="stylesheet" href="style.css">
+
   <title>Vue Email list</title>
 </head>
 <body>
-  <div class="container" id="app">
-    <ul v-if="emails.length === 10"><li v-for="email in emails">{{email}}</li></ul>
+<div class="px-4 py-5 my-5 text-center" id="app">
+  <h1 class="display-5 fw-bold">Vue Email list</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Here 10 random emails!</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <ol v-if="emails.length === 10">
+        <li v-for="email in emails">{{email}}</li>
+      </ol>
+      <div v-if="emails.length !== 10">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   </div>
   <script src="script.js"></script>
 </body>
