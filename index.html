@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="container" id="app">
-    <ul><li v-for="email in emails">{{email}}</li></ul>
+    <ul v-if="emails.length === 10"><li v-for="email in emails">{{email}}</li></ul>
   </div>
   <script src="script.js"></script>
 </body>
